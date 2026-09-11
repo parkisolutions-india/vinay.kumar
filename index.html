@@ -1,0 +1,557 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<style>
+/* =====================================================
+   VINAY KUMAR RAVI - ELEMENTOR CONTACT CARD
+   Mobile Size: 390px
+===================================================== */
+
+.vinay-card,
+.vinay-card * {
+    box-sizing: border-box;
+}
+
+.vinay-card {
+    --silver: #C4C7C6;
+    --champagne: #D4AF94;
+    --brown: #5A281B;
+    --brown-dark: #32160F;
+    --cream: #F8F6F3;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: var(--cream);
+    color: #292929;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    position: relative;
+
+    box-shadow: none;
+}
+
+.vinay-inner {
+    width: 100%;
+    max-width: 390px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.vinay-hero {
+    width: 100%;
+    height: 190px;
+    position: relative;
+    background:
+        radial-gradient(circle at 50% 20%, rgba(212,175,148,.15), transparent 45%),
+        linear-gradient(145deg, #32160F, #5A281B 55%, #743A26);
+}
+
+.vinay-hero::before,
+.vinay-hero::after {
+    content: "";
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    border: 1px solid rgba(212,175,148,.35);
+    top: -110px;
+    pointer-events: none;
+}
+
+.vinay-hero::before { left: -35px; }
+.vinay-hero::after { right: -35px; }
+
+.vinay-brand {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+.vinay-brand img {
+    width: 205px;
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.vinay-brand-caption {
+    margin-top: 3px;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.8px;
+}
+
+.vinay-profile {
+    position: absolute;
+    z-index: 100;
+    left: 50%;
+    top: 78px;
+    transform: translateX(-50%);
+    width: 158px;
+    height: 158px;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(135deg, #ffffff, #D4AF94, #ffffff, #D4AF94);
+    box-shadow: 0 12px 30px rgba(50,22,15,.30);
+}
+
+.vinay-profile img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    object-fit: cover;
+    object-position: 50% 30%;
+}
+
+.vinay-content {
+    position: relative;
+    padding: 48px 20px 0;
+    text-align: center;
+}
+
+.vinay-name {
+    margin: 5px;
+    color: var(--brown-dark);
+    font-size: 23px;
+    line-height: .98;
+    letter-spacing: 5px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.vinay-role {
+    margin-top: 6px;
+    color: #555;
+    font-size: 15px;
+    letter-spacing: .2px;
+}
+
+.vinay-divider {
+    width: 58px;
+    height: 2px;
+    margin: 10px auto 10px;
+    background: var(--champagne);
+}
+
+.vinay-skills {
+    margin: 0 0 12px;
+    color: #4A4A4A;
+    font-size: 10px;
+    line-height: 1.55;
+}
+
+.vinay-dot {
+    color: var(--champagne);
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+.vinay-save {
+    width: 100%;
+    min-height: 70px;
+    border: 0;
+    border-radius: 18px;
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 9px 14px;
+    gap: 9px;
+    background: linear-gradient(135deg, #32160F, #5A281B 55%, #743A26);
+    box-shadow: 0 9px 22px rgba(50,22,15,.25);
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.vinay-save:active { transform: scale(.98); }
+
+.vinay-contact-icon {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    border: 1.5px solid rgba(255,255,255,.9);
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vinay-contact-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.vinay-save-title {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+.vinay-save-sub {
+    margin-top: 3px;
+    font-size: 9px;
+    opacity: .8;
+}
+
+.vinay-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.vinay-action {
+    min-height: 61px;
+    border-radius: 12px;
+    background: #fff;
+    color: var(--brown-dark);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    box-shadow: 0 6px 16px rgba(0,0,0,.09);
+    transition: transform .2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.vinay-action:active { transform: scale(.96); }
+
+.vinay-action svg {
+    width: 23px;
+    height: 23px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+}
+
+.vinay-action.linkedin svg {
+    fill: currentColor;
+    stroke: none;
+}
+
+.vinay-action span {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .7px;
+}
+
+.vinay-quote {
+    margin-top: 9px;
+    padding: 9px 12px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #E8E4DF, #E1D4CB);
+    color: #44251C;
+    font-size: 10px;
+    line-height: 1.4;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.vinay-quote-mark {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    line-height: .8;
+    color: var(--champagne);
+}
+
+.vinay-footer {
+    margin-top: 9px;
+    padding: 10px 15px 9px;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(145deg, #32160F, #5A281B);
+    border-radius: 50% 50% 0 0 / 25px 25px 0 0;
+}
+
+.vinay-footer-line {
+    font-size: 10px;
+    margin-bottom: 4px;
+}
+
+.vinay-footer-copy {
+    font-size: 9px;
+    opacity: .72;
+}
+
+.vinay-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 100vh !important;
+    min-height: 100svh !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+html,
+body {
+    margin: 0 !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+
+@media (max-width: 390px) {
+    .vinay-inner { width: 100%; max-width: 100%; }
+    .vinay-hero { height: clamp(170px, 48vw, 190px); }
+    .vinay-brand img { width: min(205px, 68vw); }
+    .vinay-profile {
+        width: clamp(130px, 40vw, 158px) !important;
+        height: clamp(130px, 40vw, 158px) !important;
+        top: clamp(72px, 20vw, 78px) !important;
+    }
+    .vinay-content {
+        padding: clamp(42px, 12vw, 48px) clamp(12px, 5vw, 20px) 0 !important;
+    }
+    .vinay-name {
+        font-size: clamp(21px, calc(7vw - 2px), 29px) !important;
+        letter-spacing: clamp(1.5px, 1.2vw, 5px);
+    }
+    .vinay-role { font-size: clamp(13px, 3.8vw, 15px); }
+    .vinay-skills { font-size: clamp(9px, 2.7vw, 10px); }
+    .vinay-save { min-height: clamp(66px, 19vw, 70px); }
+    .vinay-actions { gap: clamp(6px, 2.5vw, 10px); }
+    .vinay-action { min-width: 0; }
+    .vinay-action span { font-size: clamp(7px, 2.3vw, 9px); letter-spacing: .35px; }
+}
+
+@media (max-width: 350px) {
+    .vinay-profile { width: 130px !important; height: 130px !important; top: 70px !important; }
+    .vinay-content { padding-top: 42px !important; }
+    .vinay-name { font-size: 21px !important; letter-spacing: 1.5px !important; }
+    .vinay-role { font-size: 13px !important; }
+    .vinay-save-title { font-size: 14px; }
+    .vinay-actions { gap: 6px !important; }
+}
+
+.vinay-map-modal { overflow-y: auto; }
+.vinay-map-box { max-height: calc(100svh - 36px); }
+.vinay-map-frame { height: min(360px, 52svh); }
+
+.vinay-address {
+    margin-top: 4px;
+    font-size: 10px;
+    line-height: 1.25;
+    color: #666;
+    text-align: center;
+    max-width: 250px;
+}
+
+.vinay-location-link { display: block; text-decoration: none; color: inherit; cursor: pointer; }
+.vinay-location-link:hover { text-decoration: none; }
+
+.vinay-location-button { border: 0; font: inherit; cursor: pointer; }
+
+.vinay-map-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999999;
+    background: rgba(0,0,0,.65);
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    box-sizing: border-box;
+}
+
+.vinay-map-modal.is-open { display: flex; }
+
+.vinay-map-box {
+    width: min(100%, 700px);
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0,0,0,.3);
+    position: relative;
+}
+
+.vinay-map-title { padding: 14px 48px 10px 16px; font-weight: 700; font-size: 15px; color: #222; }
+.vinay-map-address { padding: 0 16px 12px; font-size: 12px; line-height: 1.4; color: #666; }
+.vinay-map-frame { display: block; width: 100%; height: 360px; border: 0; }
+
+.vinay-map-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 50%;
+    background: #f1f1f1;
+    color: #222;
+    font-size: 22px;
+    line-height: 34px;
+    cursor: pointer;
+}
+
+.vinay-card { padding-bottom: 1px; }
+</style>
+
+<div class="vinay-card">
+     <div class="vinay-inner">
+
+    <div class="vinay-hero">
+
+        <div class="vinay-brand">
+            <img src="isolutions.png" alt="Park Solutions">
+        </div>
+
+        <div class="vinay-profile">
+            <img src="vinay.jpg" alt="Vinay Kumar Ravi">
+        </div>
+
+    </div>
+
+    <div class="vinay-content">
+
+        <h1 class="vinay-name">Vinay Kumar Ravi</h1>
+
+        <div class="vinay-role">Director for International Sales</div>
+        <div class="vinay-role">Middle East</div>
+
+        <div class="vinay-divider"></div>
+
+        <div class="vinay-skills">
+            <span class="vinay-dot">•</span>INTERNATIONAL SALES <span class="vinay-dot">•</span> BUSINESS DEVELOPMENT  <br><span class="vinay-dot">•</span> CLIENT RELATIONS
+           
+           <span class="vinay-dot">•</span> STRATEGIC PARTNERSHIPS
+        </div>
+
+        <button class="vinay-save" id="vinaySaveContact" type="button">
+            <span class="vinay-contact-icon">
+                <svg viewBox="0 0 48 48">
+                    <circle cx="15" cy="15" r="6.5" fill="none" stroke="white" stroke-width="2"/>
+                    <path d="M5 33c1.5-7 5-10 10-10s8.5 3 10 10" fill="none" stroke="white" stroke-width="2"/>
+                    <path d="M30 12h12 M30 20h12 M30 28h12 M30 36h8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </span>
+            <span>
+                <div class="vinay-save-title">SAVE MY CONTACT</div>
+                <div class="vinay-save-sub">Add to your phone in one tap</div>
+            </span>
+        </button>
+
+        <div class="vinay-actions">
+
+            <a class="vinay-action" href="tel:+971545416037">
+                <svg viewBox="0 0 24 24"><path d="M5 4l4 3-2 3 c1.4 3 3 4.6 6 6 l3-2 3 4 c-1 2-3 3-5 2 C9 18 6 15 4 10 C3 7 3 5 5 4z"/></svg>
+                <span>CALL</span>
+            </a>
+
+            <a class="vinay-action" href="https://wa.me/+971545416037" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M20 11.5 a8 8 0 0 1-11.7 7.1 L4 20l1.4-4.1 A8 8 0 1 1 20 11.5z"/><path d="M9 8 c.3-.7.7-.7 1.1-.1 l1 1.4 c.2.3.1.6-.1.9 l-.5.5 c.6 1.1 1.5 2 2.6 2.6 l.5-.5 c.3-.2.6-.3.9-.1 l1.4 1 c.6.4.6.8-.1 1.1 -1 .5-2.3.3-3.4-.4 -1.8-1-3.5-2.7-4.5-4.5 C8.7 10.3 8.5 9 9 8z"/></svg>
+                <span>WHATSAPP</span>
+            </a>
+
+            <a class="vinay-action linkedin" href="https://www.linkedin.com/in/vinay-kumar-raavi-5a7b898/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M5.2 8.3H2V22h3.2V8.3z M3.6 2 A1.9 1.9 0 1 0 3.6 5.8 1.9 1.9 0 0 0 3.6 2z M8.2 8.3H11v1.9h.1 c.4-.8 1.4-2.2 3.8-2.2 4 0 4.7 2.6 4.7 6V22 h-3.2v-7.1 c0-1.7 0-3.8-2.3-3.8 s-2.7 1.8-2.7 3.7V22H8.2V8.3z"/></svg>
+                <span>LINKEDIN</span>
+            </a>
+
+            <a class="vinay-action" href="mailto:vinaykumar@parkisolutions.com">
+                <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+                <span>EMAIL</span>
+            </a>
+
+            <a class="vinay-action" href="https://www.parkisolutions.com/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18 M12 3c3 3 4 6 4 9 s-1 6-4 9 M12 3c-3 3-4 6-4 9 s1 6 4 9"/></svg>
+                <span>WEBSITE</span>
+            </a>
+
+            <button type="button" class="vinay-action vinay-location-button" onclick="openVinayMap()" aria-label="Open location map">
+                <svg viewBox="0 0 24 24"><path d="M12 21 s7-6.4 7-12 a7 7 0 1 0-14 0 c0 5.6 7 12 7 12z"/><circle cx="12" cy="9" r="2.2"/></svg>
+                <span>LOCATION</span>
+            </button>
+
+        </div>
+
+        <div class="vinay-quote">
+            <span class="vinay-quote-mark">“</span>
+            <span>Expanding Global Partnerships Driving Growth in the Middle East</span>
+        </div>
+
+    </div>
+
+    <div class="vinay-footer">
+        <div class="vinay-footer-line">Let's connect and create growth together.</div>
+        <div class="vinay-footer-copy">© 2026 Park Intelli Solutions. All Rights Reserved.</div>
+    </div>
+    </div>
+
+</div>
+
+<script>
+(function(){
+    const button = document.getElementById("vinaySaveContact");
+    if(!button) return;
+    button.addEventListener("click", function(){
+        const vcard = [
+            "BEGIN:VCARD",
+            "VERSION:3.0",
+            "N:Ravi;Vinay Kumar;;;",
+            "FN:Vinay Kumar Ravi",
+            "ORG:Park Solutions",
+            "TITLE:Director for International Sales - Middle East",
+            "TEL;TYPE=CELL:+971545416037",
+            "EMAIL:vinaykumar@parkisolutions.com",
+            "URL:https://www.parkisolutions.com/",
+            "X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/vinay-kumar-raavi-5a7b898/",
+            "END:VCARD"
+        ].join("\r\n");
+        const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "Vinay-Kumar-Ravi.vcf";
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+    });
+})();
+</script>
+
+<div id="vinayMapModal" class="vinay-map-modal" aria-hidden="true">
+    <div class="vinay-map-box" role="dialog" aria-modal="true" aria-label="Location map">
+        <button type="button" class="vinay-map-close" onclick="closeVinayMap()" aria-label="Close map">&times;</button>
+        <div class="vinay-map-title">Our Location</div>
+        <div class="vinay-map-address">10, PRIMERA, R.R. Industrial Estate, Singanallur, Coimbatore, Tamil Nadu 641005</div>
+        <iframe class="vinay-map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.426500639561!2d77.041575!3d11.006592399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf530129f7651bcd%3A0x5e1649135f9b7924!2sPark%20Travel!5e0!3m2!1sen!2sin!4v1773287757693!5m2!1sen!2sin" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Park Intelli Solutions location map"></iframe>
+    </div>
+</div>
+
+<script>
+function openVinayMap() {
+    var modal = document.getElementById('vinayMapModal');
+    if (modal) { modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); }
+}
+function closeVinayMap() {
+    var modal = document.getElementById('vinayMapModal');
+    if (modal) { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden', 'true'); }
+}
+document.addEventListener('click', function(e) {
+    var modal = document.getElementById('vinayMapModal');
+    if (modal && e.target === modal) closeVinayMap();
+});
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeVinayMap();
+});
+</script>
